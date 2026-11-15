@@ -33,6 +33,20 @@ MAKEAPPX_DIRS = [os.path.join(BUILD, "tools"),
                  os.path.join(os.path.dirname(ROOT), "Send to iPhone", "build", "tools")]
 
 
+def clear(path):
+    """rmtree that survives antivirus briefly locking files; moves the folder aside as a last resort."""
+    import time
+    for _ in range(5):
+        if not os.path.exists(path):
+            return
+        try:
+            shutil.rmtree(path)
+        except OSError:
+            time.sleep(2)
+    if os.path.exists(path):
+        os.rename(path, f"{path}-old-{int(time.time())}")
+
+
 def find_makeappx():
     for d in MAKEAPPX_DIRS:
         hits = glob.glob(os.path.join(d, "sdk", "bin", "*", "x64", "makeappx.exe"))
@@ -122,8 +136,7 @@ def main():
         with open(args.store, encoding="utf-8") as f:
             cfg.update(json.load(f))
 
-    if os.path.exists(LAYOUT):
-        shutil.rmtree(LAYOUT)
+    clear(LAYOUT)
     os.makedirs(LAYOUT)
     print("Copying Python runtime…")
     copy_python(os.path.join(LAYOUT, "python"))
