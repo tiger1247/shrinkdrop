@@ -1,0 +1,5 @@
+build/
+__pycache__/
+*.pyc
+packaging/store.json.bak
+src/_storeid.py

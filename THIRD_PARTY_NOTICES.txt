@@ -1,0 +1,17 @@
+ShrinkDrop is free software released under the GNU General Public License v3 (see LICENSE).
+Source code: https://github.com/tiger1247/shrinkdrop
+
+ShrinkDrop includes the following third-party software. Each is distributed under its own
+licence; the source code for each is available from the project's website listed below.
+
+Python 3.13 ............ Python Software Foundation License      https://www.python.org/
+  (includes Tcl/Tk, OpenSSL, libffi, zlib, expat, SQLite, bzip2, xz - see python\LICENSE.txt)
+Pillow ................. MIT-CMU License                         https://github.com/python-pillow/Pillow
+pillow-heif ............ BSD-3-Clause                            https://github.com/bigcat88/pillow_heif
+  bundles libheif (LGPL-3.0), libde265 (LGPL-3.0), x265 (GPL-2.0-or-later), libaom (BSD-2-Clause)
+PyAV ................... BSD-3-Clause                            https://github.com/PyAV-Org/PyAV
+  bundles FFmpeg (built with GPL components, GPL-2.0-or-later), x264 (GPL-2.0-or-later),
+  x265 (GPL-2.0-or-later), SVT-AV1 (BSD-3-Clause-Clear), and other libraries listed at
+  https://github.com/PyAV-Org/pyav-ffmpeg
+tkinterdnd2 / tkdnd .... MIT / BSD-style                         https://github.com/Eliav2/tkinterdnd2
+PyWinRT ................ MIT                                     https://github.com/pywinrt/pywinrt
